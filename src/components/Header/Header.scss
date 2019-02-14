@@ -1,0 +1,41 @@
+.header{
+  position: relative;
+  display: flex;
+  // margin-left:70px;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+  &__item{
+    .navbar{
+      display:flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      &__item{
+        display: flex;
+        padding: .5rem .7rem;
+        align-items: center;
+        cursor: pointer;
+        .icon{  
+          
+          &--margin{
+            &_right{
+              margin-right: 12px;
+            }
+            &_left{
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar_toggle_button{
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+  .line_height{
+    height: 9px;
+    line-height: 5px;
+  }
+}

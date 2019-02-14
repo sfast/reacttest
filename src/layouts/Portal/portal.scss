@@ -1,0 +1,16 @@
+.main{
+  position: relative;
+  transition: all 0.3s ease-out;
+  will-change: width;
+  width: calc(100vw - 70px);
+  transform-origin: right;
+  float: right;
+  clear: both;
+  // padding: .5rem 1rem;
+  &--compress{
+    width: calc(100vw - 220px);
+  }
+}
+.content{
+  padding: .5rem 1rem;
+}
