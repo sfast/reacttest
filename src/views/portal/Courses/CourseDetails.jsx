@@ -1,8 +1,27 @@
 import React from 'react';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 import { DetailsPageHeader } from '../../../components/PageHeading';
 import TabContent from '../../../components/TabContent';
 
+const GET_COURSE = gql`
+  query {
+    course(id: $id) @client {
+      _id,
+			title,
+			code,
+			location,
+			owner,
+			lastAccess,
+			users,
+			visibility,
+			status,
+		}
+  }
+`
+
 const CourseDetails = (props) => {
+  console.log(props)
   function goBack(){
     props.history.push('/portal/courses');    
   }
@@ -103,4 +122,9 @@ const CourseDetails = (props) => {
   );
 };
 
-export default CourseDetails;
+export default graphql(
+  GET_COURSE,
+  {
+    options: (props) => ({ variables: { id: props.match.params.id } })
+  }
+)(CourseDetails);
