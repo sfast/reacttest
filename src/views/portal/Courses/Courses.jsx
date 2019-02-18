@@ -1,10 +1,8 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
-import { Link } from 'react-router-dom';
 import DataTable from 'react-jquery-datatable';
 import { PageHeading } from '../../../components/PageHeading';
-
 
 export const GET_COURSES = gql`
 	query GetCourses{
@@ -18,9 +16,26 @@ export const GET_COURSES = gql`
 			users,
 			visibility,
 			status,
+			__typename,
 		}
 	}
  `
+
+const UPDATE_COURSES = gql`
+	mutation UpdateCourses{
+		updateCourses @client{
+			_id,
+			title,
+			code,
+			location,
+			owner,
+			lastAccess,
+			users,
+			visibility,
+			status,
+		}
+	}
+`
 
 const Courses = (props) => {
 		const rowId = 'id'	
@@ -41,38 +56,37 @@ const Courses = (props) => {
 	];
 	// console.log(props.data)
 
-		function renderVisibility (val) {
-		return val ? 'Published' : 'Unpublished';
-		}
+	function renderVisibility (val) {
+	return val ? 'Published' : 'Unpublished';
+	}
 
-		function renderStatus(val) {
-			const clsName = val === 'sync' ? 'badge badge-success' : 'badge badge-danger';
-			return `<span class="${clsName}">${val === 'sync' ? 'Synchronized' : 'Require updates'}</span>`;
-		}
+	function renderStatus(val) {
+		const clsName = val === 'sync' ? 'badge badge-success' : 'badge badge-danger';
+		return `<span class="${clsName}">${val === 'sync' ? 'Synchronized' : 'Require updates'}</span>`;
+	}
 
-		function clickHandler (data) {
-			console.log("Click on row with _id = ", data[rowId]);
-			const { history, location } = props;
-			history.push(`${location.pathname}/${ data[rowId]}/content`)
-		}
+	function clickHandler (data) {
+		console.log("Click on row with _id = ", data[rowId]);
+		const { history, location } = props;
+		history.push(`${location.pathname}/${ data[rowId]}/content`)
+	}
 
-		function editorSaveHandler (data) {
-			console.log("Edit on row with _id = ", data[rowId]);
-		}
+	function editorSaveHandler (data) {
+		console.log("Edit on row with _id = ", data[rowId]);
+	}
 
-		// function refresh () {
-		// 	// let {dispatch} = props;
-		// 	// dispatch(fetchCourseUpdatedData());
-		// }
+	function refresh () {
+		props.updateCourses()
+	}
 	const { data : { loading, error, courses}} = props;
-	console.log({ loading, error, courses })
+	console.log(props)
 	return (
 		<>
 			<PageHeading  heading='Courses' buttons={buttons}/> 
 			<div className="d-flex align-items-center justify-content-end ml-4 mr-4 mt-4 mb-4">
-						<button className="btn btn-sm btn-success" onClick={() => this.refresh()}>Refresh</button>
+						<button className="btn btn-sm btn-success" onClick={() => refresh()}>Refresh</button>
 				</div>
-			{ error ? <h3>Error: {error}</h3> :
+			{ error ? <h3>Error: {error.message}</h3> :
 			<div className='table_wrapper'>
 					<DataTable targetId="courses"
 						className="container"
@@ -136,4 +150,10 @@ const Courses = (props) => {
 };
 
 
-export default graphql(GET_COURSES)(Courses);
+export default compose(
+  graphql(GET_COURSES),
+  graphql(UPDATE_COURSES, { name: 'updateCourses' }),
+)(Courses);
+
+
+// export default graphql(queries)(Courses);

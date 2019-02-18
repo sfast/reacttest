@@ -20,7 +20,12 @@ const typedefs =  gql`
 	type Query {
 		courses: [Course]
 		course(id: String!): [Course]
+		updateCourses: [Course]
 	}
+
+	type Mutation {
+    updateCourses: [Launch]
+  }
 
 	schema {
 		query: Query

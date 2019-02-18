@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import DataTable from 'react-jquery-datatable';
 import { DetailsPageHeader } from '../../../components/PageHeading';
 import TabContent from '../../../components/TabContent';
 
@@ -20,10 +21,35 @@ const GET_COURSE = gql`
   }
 `
 
+export const GET_COURSES = gql`
+	query GetCourses{
+		courses @client{ 
+			_id,
+			title,
+			code,
+			location,
+			owner,
+			lastAccess,
+			users,
+			visibility,
+			status,
+			__typename,
+		}
+	}
+`
 const CourseDetails = (props) => {
-  console.log(props)
   function goBack(){
     props.history.push('/portal/courses');    
+  }
+
+
+  function renderVisibility (val) {
+    return val ? 'Published' : 'Unpublished';
+  }
+
+  function renderStatus(val) {
+    const clsName = val === 'sync' ? 'badge badge-success' : 'badge badge-danger';
+    return `<span class="${clsName}">${val === 'sync' ? 'Synchronized' : 'Require updates'}</span>`;
   }
 
   const detailbuttons = [
@@ -55,6 +81,19 @@ const CourseDetails = (props) => {
       action: goBack
   }
 
+  let tableColumns = [
+    { title: 'Title', prop: 'title'},
+    { title: 'Code', prop: 'code', visible: false },
+    { title: 'Location', prop: 'location', defaultContent: 'N/A'},
+    { title: 'Owner', prop: 'owner', defaultContent: 'N/A'},
+    { title: 'Last Access', prop: 'lastAccess', type: 'num-date', defaultContent: 'Never'},
+    { title: 'Users', prop: 'users' },
+    { title: 'Visibility', prop: 'visibility', render: renderVisibility },
+    { title: 'Status', prop: 'status', type: 'html', render: renderStatus }
+  ];
+  let { data : { loading, error, courses}} = props;
+  courses = courses ? courses.slice(0, 3): [];
+  console.log({ loading, error, courses})
   return (
       <>
         <DetailsPageHeader 
@@ -70,9 +109,28 @@ const CourseDetails = (props) => {
               tab: 'Content',
               tabContent: (
                   <div>
-                    <h1>
-                      Content
-                    </h1>
+                    { error ? <h3>Error: {error.message}</h3> :
+                      <DataTable targetId="min-courses"
+                        className="container"
+                        columns={tableColumns}
+                        dataArray={courses}
+                        loading={loading}
+                        options={{
+                          quickFilter: {
+                            allow: true,
+                            condition: {
+                              key: 'owner',
+                              value: 'Shushanik Tovmasyan'
+                            }
+                          },
+                          doNotAllowSearch: true,
+                          doNotAllowExport: true,
+                          doNotAllowInfo: true,
+                          doNotAllowPage: true,
+                          sortBy: [2, 'desc']
+                        }}
+                        rowId={'_id'}
+                    /> }
                   </div>
               )
             },
@@ -80,9 +138,28 @@ const CourseDetails = (props) => {
               tab: 'VMs',
               tabContent: (
                 <div>
-                  <h1>
-                    Vms
-                  </h1>
+                  { error ? <h3>Error: {error.message}</h3> :
+                      <DataTable targetId="min-courses"
+                        className="container"
+                        columns={tableColumns}
+                        dataArray={courses}
+                        loading={loading}
+                        options={{
+                          quickFilter: {
+                            allow: true,
+                            condition: {
+                              key: 'owner',
+                              value: 'Shushanik Tovmasyan'
+                            }
+                          },
+                          doNotAllowSearch: true,
+                          doNotAllowExport: true,
+                          doNotAllowInfo: true,
+                          doNotAllowPage: true,
+                          sortBy: [2, 'desc']
+                        }}
+                        rowId={'_id'}
+                    /> }
                 </div>
             )
             },
@@ -90,9 +167,28 @@ const CourseDetails = (props) => {
               tab: 'Configuration',
               tabContent: (
                 <div>
-                  <h1>
-                    Configuration
-                  </h1>
+                  { error ? <h3>Error: {error.message}</h3> :
+                      <DataTable targetId="min-courses"
+                        className="container"
+                        columns={tableColumns}
+                        dataArray={courses}
+                        loading={loading}
+                        options={{
+                          quickFilter: {
+                            allow: true,
+                            condition: {
+                              key: 'owner',
+                              value: 'Shushanik Tovmasyan'
+                            }
+                          },
+                          doNotAllowSearch: true,
+                          doNotAllowExport: true,
+                          doNotAllowInfo: true,
+                          doNotAllowPage: true,
+                          sortBy: [2, 'desc']
+                        }}
+                        rowId={'_id'}
+                    /> }
                 </div>
             )
             },
@@ -100,9 +196,28 @@ const CourseDetails = (props) => {
               tab: 'Access',
               tabContent: (
                 <div>
-                  <h1>
-                    Access
-                  </h1>
+                  { error ? <h3>Error: {error.message}</h3> :
+                      <DataTable targetId="min-courses"
+                        className="container"
+                        columns={tableColumns}
+                        dataArray={courses}
+                        loading={loading}
+                        options={{
+                          quickFilter: {
+                            allow: true,
+                            condition: {
+                              key: 'owner',
+                              value: 'Shushanik Tovmasyan'
+                            }
+                          },
+                          doNotAllowSearch: true,
+                          doNotAllowExport: true,
+                          doNotAllowInfo: true,
+                          doNotAllowPage: true,
+                          sortBy: [2, 'desc']
+                        }}
+                        rowId={'_id'}
+                    /> }
                 </div>
             )
             },
@@ -110,9 +225,28 @@ const CourseDetails = (props) => {
               tab: 'Enrollments',
               tabContent: (
                 <div>
-                  <h1>
-                    Enrollments
-                  </h1>
+                  { error ? <h3>Error: {error.message}</h3> :
+                      <DataTable targetId="min-courses"
+                        className="container"
+                        columns={tableColumns}
+                        dataArray={courses}
+                        loading={loading}
+                        options={{
+                          quickFilter: {
+                            allow: true,
+                            condition: {
+                              key: 'owner',
+                              value: 'Shushanik Tovmasyan'
+                            }
+                          },
+                          doNotAllowSearch: true,
+                          doNotAllowExport: true,
+                          doNotAllowInfo: true,
+                          doNotAllowPage: true,
+                          sortBy: [2, 'desc']
+                        }}
+                        rowId={'_id'}
+                    /> }
                 </div>
             )
             }
@@ -123,8 +257,10 @@ const CourseDetails = (props) => {
 };
 
 export default graphql(
-  GET_COURSE,
-  {
-    options: (props) => ({ variables: { id: props.match.params.id } })
-  }
+  GET_COURSES
 )(CourseDetails);
+
+//  GET_COURSE,
+//  {
+//  options: (props) => ({ variables: { id: props.match.params.id } })
+//  }
