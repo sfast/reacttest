@@ -3,14 +3,17 @@
   transition: all 0.3s ease-out;
   will-change: margin;
   // width: calc(100vw - 70px);
-  margin-left: 70px;
+  margin-left: 220px;
+  transition: all 0.3s ease-out;
+  // transform: scaleX(0.999);
   transform-origin: right;
+  will-change: transform;
   // float: right;
-  // clear: both;
+  clear: both;
   // padding: .5rem 1rem;
-  &--compress{
+  &--expanded{
     // width: calc(100vw - 220px);
-    margin-left: 220px;
+    margin-left: 70px;
   }
 }
 .content{
@@ -19,6 +22,6 @@
 .table_wrapper{
   background: white;
   padding: 15px 20px 20px 20px;
-  margin: 0 20px;
+  margin: 0 20px 20px;
   border:1px solid #e7eaec;
 }

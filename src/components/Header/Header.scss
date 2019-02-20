@@ -40,4 +40,43 @@
     height: 9px;
     line-height: 5px;
   }
+  .header_dropdown_button{
+    background: transparent;
+    color: #676a6c;
+    border: none;
+    padding: 0;
+    &:hover{
+      background: transparent;
+      border: none !important;
+      color: #676a6c;
+      box-shadow: none;
+    }
+    &:active{
+      background: transparent !important;
+      color: #676a6c !important;
+      border: none !important;
+      box-shadow: none;
+    }
+    &:focus{
+      outline: none !important;
+      border: none !important;
+      box-shadow: none;
+    }
+    .fa-bell{
+      &:focus{
+      outline: none !important;
+      }
+    }
+  }
+  .show>.btn-secondary.dropdown-toggle{
+    background: transparent;
+    border: none !important;
+    color: #676a6c;
+    box-shadow: none;
+  }
+  .show>.btn-secondary.dropdown-toggle:focus{
+    outline: none !important;
+    border: none !important;
+    box-shadow: none; 
+  }
 }

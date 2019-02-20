@@ -1,5 +1,5 @@
 // import gql from 'graphql-tag';
-import { GET_COURSES } from '../views/portal/Courses/Courses';
+import { GET_COURSES } from '../views/portal/Admin/Courses/Courses';
 import courses from './api/courses.json';
 import newCourses from './api/newcourses.json';
 

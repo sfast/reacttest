@@ -1,16 +1,17 @@
 .sidebar{
-  position: absolute;
+  position: fixed;
   height:100%;
   top: 0;
-
   bottom: 0;
-  width: 70px;
+  width: 220px;
   background-color: rgba(47,64,80,1);
   will-change: width;
   transition: all 0.3s ease-out;
   user-select: none;
-  &--expanded{
-    width: 220px;
+  &--collapsed{
+    width: 70px;
+
+    
   }
 }
 .user{

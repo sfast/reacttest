@@ -18,6 +18,7 @@ const Portal = (props) => {
 
   function handleOnChangeView(value) {
     toggleViewType(value)
+   
   }
 
   function onLinkSelect(e, path) {
@@ -38,7 +39,7 @@ const Portal = (props) => {
         viewType={viewType}
         {...props}
       />
-      <div className={`main ${sidebarOpen ? 'main--compress' : ''}`}>
+      <div className={`main ${sidebarOpen ? '' : 'main--expanded'}`} id='main_content'>
           <Header 
             handleonSidebarToggle={handleonSidebarToggle} 
             sidebarOpen={sidebarOpen}

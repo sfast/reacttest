@@ -1,22 +1,20 @@
-import Portal from '../../views/portal/Portal/Portal';
+import Portal from '../../views/portal/Admin/Portal/Portal';
 
-import { CoursesContainer } from '../../views/portal/Courses';
-import { Courses } from '../../views/portal/Courses';
-import { CourseDetails } from '../../views/portal/Courses'
+import { Courses, CourseDetails, CoursesContainer } from '../../views/portal/Admin/Courses';
 
-import Env from '../../views/portal/Env/Env';
+import Env from '../../views/portal/Admin/Env/Env';
 
-import Policies from '../../views/portal/Policies/Policies';
+import Policies from '../../views/portal/Admin/Policies/Policies';
 
-import Templates from '../../views/portal/Templates/Templates';
+import Templates from '../../views/portal/Admin/Templates/Templates';
 
-import Classes from '../../views/portal/Classes/Classes';
+import Classes from '../../views/portal/Admin/Classes/Classes';
 
-import Vms from '../../views/portal/Vms/Vms';
+import Vms from '../../views/portal/Admin/Vms/Vms';
 
-import Administartion  from '../../views/portal/Administration/Administration';
+import Administartion  from '../../views/portal/Admin/Administration/Administration';
 
-import Reports  from '../../views/portal/Reports/Reports';
+import Reports  from '../../views/portal/Admin/Reports/Reports';
 
 
 export const pages = [

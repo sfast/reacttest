@@ -2,8 +2,8 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import DataTable from 'react-jquery-datatable';
-import { DetailsPageHeader } from '../../../components/PageHeading';
-import TabContent from '../../../components/TabContent';
+import { DetailsPageHeader } from '../../../../components/PageHeading';
+import TabContent from '../../../../components/TabContent';
 
 const GET_COURSE = gql`
   query {

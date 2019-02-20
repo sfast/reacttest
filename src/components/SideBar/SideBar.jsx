@@ -6,7 +6,7 @@ import './sideBar.scss';
 
 const SideBar = memo(({ handleOnChangeView, imageUrl, name, sidebarOpen, links, onLinkSelect, viewType }) => {
   return(
-    <div className={`sidebar ${sidebarOpen ? 'sidebar--expanded' : '' }`} >
+    <div className={`sidebar ${sidebarOpen ? '' : 'sidebar--collapsed' }`} id='collapsing_sidebar'>
         <div className='sidebar__item'>
           <User imageUrl={imageUrl} name={name} changeView={handleOnChangeView} sidebarOpen={sidebarOpen} viewType={viewType}/>
         </div>

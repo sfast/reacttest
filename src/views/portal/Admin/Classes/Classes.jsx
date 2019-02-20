@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHeading from '../../../components/PageHeading/Heading';
+import PageHeading from '../../../../components/PageHeading/Heading';
 
 const Classes = (props) => {
   const buttons = [
