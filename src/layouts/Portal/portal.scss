@@ -1,0 +1,24 @@
+.main{
+  position: relative;
+  will-change: margin;
+  margin-left: 220px;
+  transform-origin: right;
+  clear: both;
+  transition: all 0.3s ease-out;
+  &--expanded{
+    margin-left: 70px;
+  }
+  // &--collapsed{
+  //   transition: all 0.3s ease-out;
+  //   margin-left: 220px;
+  // }
+}
+.content{
+  padding: .5rem 1rem;
+}
+.table_wrapper{
+  background: white;
+  padding: 15px 20px 20px 20px;
+  margin: 0 20px 20px;
+  border:1px solid #e7eaec;
+}
