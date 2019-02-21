@@ -10,11 +10,13 @@ const UserExpanded = ({ name, imageUrl, viewType, changeView, sidebarOpen }) => 
   
   function handleOnToggleDropDown(e) {
     toggleDropDown(!droDownOpen);
-  }
+  };
+
   function onChangeHandler(e) {
     toggleDropDown(!droDownOpen);
     changeView(e.target.value)
-  }
+  };
+
   return(
     <div className=' user user--expand'>
         <Image  imageUrl={imageUrl} sidebarOpen={sidebarOpen}/>
@@ -22,7 +24,7 @@ const UserExpanded = ({ name, imageUrl, viewType, changeView, sidebarOpen }) => 
         { droDownOpen ? <DropDown  view={viewType} onChangeHandler={onChangeHandler} viewType={viewType}/> : null }
     </div>
   )
-}
+};
 
 const UserCollapsed = ({name}) =>  {
   return(
@@ -30,7 +32,7 @@ const UserCollapsed = ({name}) =>  {
         <h4><strong>{name[0]}</strong></h4>
     </div>
   )
-}
+};
 
 
 const User = (props) =>{
@@ -49,6 +51,6 @@ const User = (props) =>{
       {props.sidebarOpen ? null : <UserCollapsed {...props} />}
     </>
   )
-}
+};
 
 export default User;

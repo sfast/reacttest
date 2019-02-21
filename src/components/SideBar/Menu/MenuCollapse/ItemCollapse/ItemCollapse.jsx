@@ -10,7 +10,7 @@ const ItemCollapse = ({ paths, icon, name, onLinkSelect, views, collapse, ...pro
       </div>
     </div>
   )
-}
+};
  /*
  *
  *  if LinkItem has array of views use DropDown component
@@ -20,7 +20,7 @@ const DropDown = (props) => (
   <div className=' navmenu__item--collapse__dropdown'>
     {props.views.map(view => <Item key={view.paths[0].path} onLinkSelect={props.onLinkSelect} {...view} history={props.history}/>)}
   </div>
-)
+);
 
 const Item =(props) => {
   const actvieClass = window.location.pathname === props.paths[0].path  ? 'navmenu__item--active': '';
@@ -29,7 +29,7 @@ const Item =(props) => {
       <div>{props.name}</div>
     </div>
   )
-}
+};
 
 
 export default ItemCollapse;

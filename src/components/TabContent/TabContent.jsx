@@ -14,6 +14,7 @@ const TabContent = (props) => {
 
   const tabs = props.tabs.map(tab => tab.tab);
   const content = props.tabs.filter(content => content.tab === tab)[0];
+  
   return (
     <div className='tab_content'>
       <Tabs tabsArray={tabs} {...props} changeTab={changeTab}/>

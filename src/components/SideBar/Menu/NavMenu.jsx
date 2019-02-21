@@ -17,8 +17,6 @@ const NavMenu = (props) => {
     >
       <MenuExpanded {...props}/>
     </CSSTransition> 
-  
-    {/* {props.sidebarOpen ? null :  */}
     <CSSTransition in={!props.sidebarOpen}
       timeout={300}
       classNames={{
@@ -29,10 +27,8 @@ const NavMenu = (props) => {
     >
       <MenuCollapse  {...props}/> 
     </CSSTransition>
-    {/* } */}
     </>
    )
-}
- 
+};
 
 export default NavMenu;

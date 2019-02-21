@@ -12,24 +12,26 @@ const Heading  = (props) => {
   const [dropdownOpen, toggle] = useState(false);
   function handleOnToggle() {
     toggle(!dropdownOpen);
-  }
+  };
+
   const buttons = props.buttons ? props.buttons.map(button =>  { 
     switch(button.type){
       case 'button' : return <div className='heading__item_button' key={button.name}><Button  onClick={button.action} color='primary'>{button.name}</Button></div>;
       case 'dropdown' : return(
-      <div className='heading__item_button' key={button.name}>
-        <ButtonDropdown   isOpen={dropdownOpen}  toggle={handleOnToggle}> 
-        <DropdownToggle caret outline color='primary'>
-          {button.name}
-        </DropdownToggle>
-        <DropdownMenu>
-          {button.actions.map(act => <DropdownItem key={act}>{act}</DropdownItem> )}
-        </DropdownMenu>
-      </ButtonDropdown>
-      </div>);
+        <div className='heading__item_button' key={button.name}>
+          <ButtonDropdown   isOpen={dropdownOpen}  toggle={handleOnToggle}> 
+          <DropdownToggle caret outline color='primary'>
+            {button.name}
+          </DropdownToggle>
+          <DropdownMenu>
+            {button.actions.map(act => <DropdownItem key={act}>{act}</DropdownItem> )}
+          </DropdownMenu>
+        </ButtonDropdown>
+        </div>);
       default : return null;
     }
   }) : null;
+
   return(
     <div className='heading'>
       <div className='heading__item'>
@@ -48,6 +50,6 @@ const Heading  = (props) => {
       </div>
     </div>
   )
-}
+};
 
 export default Heading;

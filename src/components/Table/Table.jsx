@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Table = () => {
   return(
     <div>
     </div>
   )
-}
+};
 
 export default Table;

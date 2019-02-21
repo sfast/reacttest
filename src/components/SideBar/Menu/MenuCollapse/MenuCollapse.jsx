@@ -7,6 +7,6 @@ const Menu = (props) => {
       {props.links.map(link => <Item key={link.paths[0].path}  {...link} {...props} />)}
     </div>
   )
-}
+};
 
 export default Menu;
