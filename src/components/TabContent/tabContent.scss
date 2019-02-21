@@ -1,0 +1,35 @@
+.tab_content{
+  padding: 15px 16px;
+}
+.tabs_block{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  &__item{
+    border-top: 4px solid transparent;
+    &__link{
+      display: block;
+      font-weight: 600;
+      padding: 10px 20px 10px 25px;
+      color: #a7b1c2;
+      cursor: pointer;
+      &:hover{
+        text-decoration: none;
+        color: #676a6c;
+      }
+    }
+    &--active{
+      border-color:#007bff;
+      background: #fff;
+    }
+    &--active &__link{
+      color: #555;
+    }
+  }
+}
+.content_block{
+  background: white;
+  min-height: 300px;
+  padding: 10px 20px 10px 25px;
+}

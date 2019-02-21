@@ -1,0 +1,71 @@
+[
+  {
+    "_id": "5be00627fcf77f2332077f1e",
+    "title": "This is #1 course",
+    "code": "course_1_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Shushanik Tovmasyan",
+    "lastAccess": "",
+    "users": 0,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+  }, {
+    "_id": "5be00627fcf77f2332077f2e",
+    "title": "This is #2 course",
+    "code": "course_2_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "1 month 3 days 3 mins",
+    "users": 3,
+    "visibility": true,
+    "status": "unsync",
+    "__typename": "course"
+  }, {
+    "_id": "5be00627fcf77f2332077f3e",
+    "title": "This is #3 course",
+    "code": "course_3_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Shushanik Tovmasyan",
+    "lastAccess": "",
+    "users": 1,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+  }, {
+    "_id": "5be00627fcf77f2332077f4e",
+    "title": "This is #4 course",
+    "code": "course_4_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "2 days 3 mins",
+    "users": 3,
+    "visibility": true,
+    "status": "unsync",
+    "__typename": "course"
+  },
+  {
+    "_id": "5be00627fcf77f2332077f5e",
+    "title": "This is #5 course",
+    "code": "course_5_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Shushanik Tovmasyan",
+    "lastAccess": "",
+    "users": 0,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+  }, {
+    "_id": "5be00627fcf77f2332077f6e",
+    "title": "This is #6 course",
+    "code": "course_6_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "",
+    "users": 33,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+  }
+]
+

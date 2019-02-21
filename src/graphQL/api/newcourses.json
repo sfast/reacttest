@@ -1,0 +1,89 @@
+[
+  {
+    "_id": "5be00627fcf77f2332077f7e",
+    "title": "This is #7 course",
+    "code": "course_7_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Shushanik Tovmasyan",
+    "lastAccess": "",
+    "users": 0,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+
+  }, {
+    "_id": "5be00627fcf77f2332077f8e",
+    "title": "This is #8 course",
+    "code": "course_8_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "1 month 3 days 3 mins",
+    "users": 3,
+    "visibility": true,
+    "status": "unsync",
+    "__typename": "course"
+
+  }, {
+    "_id": "5be00627fcf77f2332077f9e",
+    "title": "This is #9 course",
+    "code": "course_9_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Shushanik Tovmasyan",
+    "lastAccess": "",
+    "users": 1,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+
+  }, {
+    "_id": "5be00627fcf77f2332077f10e",
+    "title": "This is #10 course",
+    "code": "course_10_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "2 days 3 mins",
+    "users": 3,
+    "visibility": true,
+    "status": "unsync",
+    "__typename": "course"
+
+  },
+  {
+    "_id": "5be00627fcf77f2332077f11e",
+    "title": "This is #11 course",
+    "code": "course_11_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Shushanik Tovmasyan",
+    "lastAccess": "",
+    "users": 0,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+
+  }, {
+    "_id": "5be00627fcf77f2332077f12e",
+    "title": "This is #12 course",
+    "code": "course_12_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "",
+    "users": 33,
+    "visibility": true,
+    "status": "sync",
+    "__typename": "course"
+
+  }, {
+    "_id": "5be00627fcf77f2332077f13e",
+    "title": "This is #13 course",
+    "code": "course_13_code",
+    "location": "US East (N. Virginia)",
+    "owner": "Artak Vardanyan",
+    "lastAccess": "",
+    "users": 0,
+    "visibility": true,
+    "status": "unsync",
+    "__typename": "course"
+
+  }
+]
+
