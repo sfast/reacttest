@@ -38,11 +38,11 @@ const UPDATE_COURSES = gql`
 `
 
 const Courses = (props) => {
-		const rowId = 'id'	
-		const buttons = [
+	const rowId = 'id'	
+	const buttons = [
 		{name: 'Action', type: 'dropdown', actions: [ 'Action' ] },
 		{name: 'Add', type: 'button', action: () => {} },
-	]
+	];
 
 	let tableColumns = [
 		{ title: 'Title', prop: 'title', clickable: true, editable: true },
@@ -57,27 +57,27 @@ const Courses = (props) => {
 	// console.log(props.data)
 
 	function renderVisibility (val) {
-	return val ? 'Published' : 'Unpublished';
-	}
+		return val ? 'Published' : 'Unpublished';
+	};
 
 	function renderStatus(val) {
 		const clsName = val === 'sync' ? 'badge badge-success' : 'badge badge-danger';
 		return `<span class="${clsName}">${val === 'sync' ? 'Synchronized' : 'Require updates'}</span>`;
-	}
+	};
 
 	function clickHandler (data) {
 		console.log("Click on row with _id = ", data[rowId]);
 		const { history, location } = props;
 		history.push(`${location.pathname}/${ data[rowId]}/content`)
-	}
+	};
 
 	function editorSaveHandler (data) {
 		console.log("Edit on row with _id = ", data[rowId]);
-	}
+	};
 
 	function refresh () {
 		props.updateCourses()
-	}
+	};
 	const { data : { loading, error, courses}} = props;
 	// console.log(props)
 	return (
@@ -149,11 +149,9 @@ const Courses = (props) => {
 	);  
 };
 
-
 export default compose(
   graphql(GET_COURSES),
   graphql(UPDATE_COURSES, { name: 'updateCourses' }),
 )(Courses);
-
 
 // export default graphql(queries)(Courses);

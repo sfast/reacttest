@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-const componentName = (props) => {
-  return (
-    <div className='content_block'>
-        {props.content}
-    </div>
-  )
-}
+const Content = (props) => (
+  <div className='content_block'>
+    {props.content}
+  </div>
+)
 
-export default componentName
+export default Content;

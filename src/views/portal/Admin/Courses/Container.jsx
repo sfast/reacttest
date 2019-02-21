@@ -8,7 +8,7 @@ const Container = (props) => {
           return  <Route exact path={prop.path} render={(props) => <prop.component {...props}/>} key={key}/>
         })}
       </Switch>
-    )
-}
+    );
+};
 
 export default Container;

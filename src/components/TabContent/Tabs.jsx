@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // import { Link } from 'react-router-dom';
 
 const Tabs = ({ match, tabsArray, changeTab, ...props }) => {
@@ -10,6 +10,6 @@ const Tabs = ({ match, tabsArray, changeTab, ...props }) => {
       })}
     </ul>
   )
-}
+};
 
-export default Tabs
+export default Tabs;

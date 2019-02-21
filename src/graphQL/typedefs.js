@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const typedefs =  gql`
+const typedefs = gql`
 	
 	type Course {
 		name: String
@@ -31,5 +31,5 @@ const typedefs =  gql`
 		query: Query
 	}
 
-`
+`;
 export default typedefs;

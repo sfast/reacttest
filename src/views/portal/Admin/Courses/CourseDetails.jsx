@@ -40,22 +40,22 @@ export const GET_COURSES = gql`
 const CourseDetails = (props) => {
   function goBack(){
     props.history.push('/portal/courses');    
-  }
+  };
 
 
   function renderVisibility (val) {
     return val ? 'Published' : 'Unpublished';
-  }
+  };
 
   function renderStatus(val) {
     const clsName = val === 'sync' ? 'badge badge-success' : 'badge badge-danger';
     return `<span class="${clsName}">${val === 'sync' ? 'Synchronized' : 'Require updates'}</span>`;
-  }
+  };
 
   const detailbuttons = [
     {name: 'Action', type: 'dropdown', actions: [ 'Hide', 'Export', 'Update', 'Copy' ] },
     {name: 'Preview Course', type: 'button', action: () => {}  },
-  ]
+  ];
 
   const additionalInfo = [
     {
@@ -74,12 +74,12 @@ const CourseDetails = (props) => {
       title: 'VLUUs',
       text: '1'
     }
-  ] 
+  ] ;
 
   const backButton = {
       name: 'Courses',
       action: goBack
-  }
+  };
 
   let tableColumns = [
     { title: 'Title', prop: 'title'},
@@ -93,7 +93,7 @@ const CourseDetails = (props) => {
   ];
   let { data : { loading, error, courses}} = props;
   courses = courses ? courses.slice(0, 3): [];
-  console.log({ loading, error, courses})
+  // console.log({ loading, error, courses})
   return (
       <>
         <DetailsPageHeader 

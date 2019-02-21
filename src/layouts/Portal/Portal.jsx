@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Sidebar from '../../components/SideBar';
-import Header from '../../components/Header';
-import imageUrl from '../../assets/img/placeholder.png';
-import { pages as adminLinks} from '../../routes/portal/portalAdminRoutes'; 
-import { pages as userLinks} from '../../routes/portal/portalUserRoutes'; 
+import Sidebar from 'components/SideBar';
+import Header from 'components/Header';
+import imageUrl from 'assets/img/placeholder.png';
+import { pages as adminLinks} from 'routes/portal/portalAdminRoutes'; 
+import { pages as userLinks} from 'routes/portal/portalUserRoutes'; 
 import './portal.scss';
 
 const Portal = (props) => {
